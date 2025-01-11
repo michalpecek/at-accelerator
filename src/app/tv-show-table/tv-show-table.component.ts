@@ -1,6 +1,5 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, input, Pipe, PipeTransform } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Input } from '@angular/core';
 import { Signal } from '@angular/core';
 import { Show } from '../episodate.service';
 
@@ -20,8 +19,6 @@ export class  MagicYearPipe implements PipeTransform{
   styleUrls: ['./tv-show-table.component.css']
 })
 export class TvShowTableComponent {
-  @Input() shows!: Signal<Show[] | undefined> 
-  @Input() isLoading!: Signal<Boolean> 
-
-
+  shows = input<Show[]>([])  
+  isLoading = input<Boolean>(true) 
 }
