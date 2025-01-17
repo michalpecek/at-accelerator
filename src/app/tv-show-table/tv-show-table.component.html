@@ -22,7 +22,7 @@
     <td data-label="Status">Running</td>
     <td data-label="Actions">
       <span class="icon-info"></span>
-      <span class="icon-bookmark"></span>
+      <span class="icon-bookmark" (click)="fs.toggleFavorites(show.id)" [class.highlight]="fs.favorites().includes(show.id)"></span>
       <span class="icon-link"></span>
     </td>
   </tr>
